@@ -19,4 +19,24 @@ services:
       dockerfile: ./Dockerfile
     volumes:
         - ./code:/code
+    links:
+      - db
+
+  db:
+    image: postgres:latest
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
+      - ./schema.sql:/schema.sql
+      - ./data.sql:/data.sql
+    environment:
+      POSTGRES_PASSWORD: tapmango
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8080:8080"
 
