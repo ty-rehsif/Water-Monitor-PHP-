@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./code:/code
+      - ./site.conf:/etc/nginx/conf.d/site.conf
+    links:
+      - php
+
+  php:
+    build: 
+      context: ./dockerfiles/php/
+      dockerfile: ./Dockerfile
+    volumes:
+        - ./code:/code
+
