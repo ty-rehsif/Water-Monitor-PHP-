@@ -13,15 +13,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	while ($row = pg_fetch_array($result)) {
         $data_item['id'] = $row['id'];
         $data_item['name'] = $row['p_name'];
-        $data_item['created'] = $row['create_timed'];
-        $data_item['update'] = $row['update_time'];
+        $data_item['last_watered'] = $row['last_watered'];
         $data_item['status'] = $row['p_status'];
         $items[] = $data_item;
         }
     //send variables to plant monitor
     $_SESSION['items'] = $items;
     //echo($items[0]['name']); = plant 1
-    //header('Location: plantmonitor.php');
+    header('Location: plantmonitor.php');
 }
 ?>
 <!-- <?php  ?> -->

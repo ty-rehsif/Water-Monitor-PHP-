@@ -24,8 +24,7 @@ echo $data[0]['id'];?>
     <tr>
         <th>id</th>
         <th>name</th>
-        <th>created</th>
-        <th>updated</th>
+        <th>last watered</th>
         <th>status</th>
         <th>action</th>
     </tr>
@@ -33,8 +32,8 @@ echo $data[0]['id'];?>
     <tr>
         <td><?php echo $data[$x]['id'];?></td>
         <td><?php echo $data[$x]['name'];?></td>
-        <td><?php echo $data[$x]['created'];?></td>
-        <td><?php echo $data[$x]['update'];?></td>
+        <?php echo "<script>alert(($data[$x]['update']-now())></script>"?>
+        <td><?php echo $data[$x]['last_watered'];?></td>
         <td><?php echo $data[$x]['status'];?></td>
         <td>
             <input type="checkbox" name="plant[]" value="<?=$data[$x]['id']?>">

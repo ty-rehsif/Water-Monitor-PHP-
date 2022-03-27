@@ -1,12 +1,8 @@
-
-
 CREATE TABLE plants (
 	id SERIAL,
 	p_name varchar(255),
-	create_timed timestamp DEFAULT NOW(),
-	update_time timestamp DEFAULT NOW(),
+	last_watered timestamp DEFAULT null,
 	p_status varchar(255) DEFAULT 'NOT WATERED',
 	PRIMARY KEY (id) 
 );
-
 

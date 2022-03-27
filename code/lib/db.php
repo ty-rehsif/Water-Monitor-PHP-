@@ -27,7 +27,7 @@ function run_query($dbconn, $query) {
 //database functions
 function get_plants($dbconn){
 	$query= 
-		"SELECT * from plants";
+		"SELECT * from plants order by id";
 return run_query($dbconn, $query);
 }
 
