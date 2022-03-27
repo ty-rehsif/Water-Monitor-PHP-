@@ -1,7 +1,7 @@
 <?php session_start();include("templates/page_header.php");?>
 <!DOCTYPE html>
 <h1>Welcome, thanks for this oppurtunity</h1>
-<h2>Plant monitor:</h2>
+<h2>Plant Monitor:</h2>
 
 <?php $data = $_SESSION['items'];
 $_SESSION['token'] = (bin2hex(openssl_random_pseudo_bytes(32)));
