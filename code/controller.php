@@ -1,11 +1,12 @@
 <?php session_start();include("templates/page_header.php");?>
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_SESSION['token']===$_POST['token'])) {
+    if(!empty($_POST['plant'])){
+    
     // The request is using the POST method
     //get table information
     $control = $_POST['control'];
     $n_water = $_POST['plant'];
-
     if($control ==1){
         update_status($dbconn, $n_water);
         }
@@ -20,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     //send variables to plant monitor
     $_SESSION['items'] = $items;
     //echo($items[0]['name']); = plant 1
+    }
     header('Location: plantmonitor.php');
 }
 ?>
