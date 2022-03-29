@@ -78,7 +78,7 @@ h1,h2{
                         </tr>
                     <?php }?>
             </table>
-                <!-- wanted to add if coming from the controller.php redirect disable or hide for 30 secs-->
+                <!-- wanted to add if coming from the controller.php redirect disable or hide for 30 secs, also if no checkbox selected do not submit-->
                 <input name="water_btn"  id="water_btn" type="submit" value="Water" onclick=<?php echo "delay(this); alert('Watering...');"?>>
         </form>
         <form action = "watermango.php" method="POST">
