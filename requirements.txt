@@ -1,3 +1,5 @@
+NB: I used a Linux VM/system (Ubuntu 20)
+
 nginx:
 
 1) nginx installed
