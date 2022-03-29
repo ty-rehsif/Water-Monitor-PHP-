@@ -1,0 +1,7 @@
+1) in this location in the terminal run the linux commands:
+	sudo docker-compose build
+	sudo docker-compoes up
+2) go to a web browser and in the address enter: 
+https://*vm or current computer ip address*/plantmonitor.php
+
+

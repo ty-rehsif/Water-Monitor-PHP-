@@ -1,0 +1,14 @@
+nginx:
+
+1) nginx installed
+2) sudo chown -R $USER:$USER /var/www/html
+3) sudo chmod -R 755 /var/www/html
+
+docker:
+sudo apt install docker-ce docker-ce-cli containerd.io
+
+php:
+sudo apt install php 
+
+pgsql:
+commands ran from the docker files, be careful as an update is ran beforehand
