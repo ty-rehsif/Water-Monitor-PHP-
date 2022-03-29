@@ -7,7 +7,6 @@
     table, th, td{
         border: 2px solid powderblue;
         align-content: center;
-        
     }
     body{
     background-color: whitesmoke;
@@ -26,8 +25,8 @@ h1,h2{
 }
 </style>
 </head>
-<h1>Welcome, thank you for this oppurtunity</h1>
-<h2>WaterMango:</h2>
+<h1>Welcome and thank you for this oppurtunity</h1>
+<h2>WaterMango [Plant Monitor]:</h2>
 <body>
 <!-- getting items from controller.php -->
     <?php $data = $_SESSION['items'];
@@ -40,14 +39,15 @@ h1,h2{
     <?php if(empty($data)){ ?>
         <form action="/controller.php" method="POST">
             <input type="hidden" name="token" value=<?=$token?>>
-            <input type="submit" value="Start" >
+            <input type="submit" value="Start">
         </form>
     <?php }?>
 <!-- if data is in the variable show the table -->
-    <?php if(!empty($data)){ ?>
+    <?php if(!empty($data)){?>
         <form action="controller.php" method="POST" name="water_form" id="water_form" onsubmit="water_btn.disabled = true; return true;">
             <table class = "center" style="width: 60%; text-align: center;">
-                <tr >
+            <!-- table header row with column headings-->
+                <tr>
                     <th>ID</th>
                     <th>Name</th>
                     <th>Last Time Watered</th>
@@ -76,21 +76,21 @@ h1,h2{
                                 <input type="hidden" name="control" value="1">
                             </td>
                         </tr>
-                    <?php }?>     
+                    <?php }?>
             </table>
-                <!-- wanted to add if coming from a controller.php redirect disable or hide for 30 secs-->
+                <!-- wanted to add if coming from the controller.php redirect disable or hide for 30 secs-->
                 <input name="water_btn"  id="water_btn" type="submit" value="Water" onclick=<?php echo "delay(this); alert('Watering...');"?>>
         </form>
-        <form action = "plantmonitor.php" method="POST"> 
+        <form action = "watermango.php" method="POST">
             <button>Stop Watering</button>
         </form>
     <?php } ?>
 </body>
 <script>
-        function delay(obj) {
-        //before click
-        obj.disabled = true;
-        alert("watering!");
+    function delay(obj) {
+    //before click
+    obj.disabled = true;
+    alert("watering!");
         setTimeout(function() {
             //after click
             obj.disabled = false;
